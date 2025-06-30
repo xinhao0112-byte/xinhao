@@ -1,0 +1,52 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 10, in script
+    "欢迎使用悬浮窗口演示程序。"
+  File "renpy/common/00action_control.rpy", line 131, in __call__
+    renpy.show_screen(self.screen, *self.args, **self.kwargs)
+Exception: Screen tooltip is not known.
+
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 10, in script
+    "欢迎使用悬浮窗口演示程序。"
+  File "D:\renpy\renpy-8.3.7-sdk\renpy\ast.py", line 2586, in execute
+    Say.execute(self)
+  File "D:\renpy\renpy-8.3.7-sdk\renpy\ast.py", line 623, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "D:\renpy\renpy-8.3.7-sdk\renpy\exports\sayexports.py", line 132, in say
+    who(what, *args, **kwargs)
+  File "D:\renpy\renpy-8.3.7-sdk\renpy\character.py", line 1471, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "D:\renpy\renpy-8.3.7-sdk\renpy\character.py", line 1117, in do_display
+    display_say(who,
+  File "D:\renpy\renpy-8.3.7-sdk\renpy\character.py", line 814, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "D:\renpy\renpy-8.3.7-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "D:\renpy\renpy-8.3.7-sdk\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "D:\renpy\renpy-8.3.7-sdk\renpy\display\core.py", line 3284, in interact_core
+    rv = renpy.display.focus.mouse_handler(ev, x, y)
+  File "D:\renpy\renpy-8.3.7-sdk\renpy\display\focus.py", line 638, in mouse_handler
+    return change_focus(new_focus, default=default)
+  File "D:\renpy\renpy-8.3.7-sdk\renpy\display\focus.py", line 571, in change_focus
+    rv = widget.focus(default=default)
+  File "D:\renpy\renpy-8.3.7-sdk\renpy\display\behavior.py", line 1021, in focus
+    rv = run(self.hovered)
+  File "D:\renpy\renpy-8.3.7-sdk\renpy\display\behavior.py", line 401, in run
+    return action(*args, **kwargs)
+  File "renpy/common/00action_control.rpy", line 131, in __call__
+    renpy.show_screen(self.screen, *self.args, **self.kwargs)
+  File "D:\renpy\renpy-8.3.7-sdk\renpy\display\screen.py", line 1328, in show_screen
+    raise Exception("Screen %s is not known.\n" % (name[0],))
+Exception: Screen tooltip is not known.
+
+
+Windows-10-10.0.22621 AMD64
+Ren'Py 8.3.7.25031702
+window 1.0
+Thu Jun 26 22:44:59 2025
